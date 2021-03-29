@@ -64,7 +64,6 @@ public class BookServiceTest {
         int id = 123;
         book.setId(id);
         Mockito.when(bookRepository.findById(book.getId())).thenReturn(Optional.ofNullable(book));
-
         Book actual = bookService.getBookById(id);
         Assert.assertEquals(book, actual);
         Assert.assertEquals(id, actual.getId());
